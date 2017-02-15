@@ -1,0 +1,22 @@
+{{outlet}}
+
+<ul>
+  <li>{{model.name}}</li>
+  <li>{{model.ip}}</li>
+  <li>{{model.type.name}}</li>
+</ul>
+
+Settings:
+<form {{action 'update' on='submit'}}>
+  <ul>
+  {{#each model.settings as |setting|}}
+    <li>
+      <label for="{{setting.control.name}}">
+        {{setting.control.name}}
+      </label>
+      {{input name=setting.control.name value=setting.value}}
+    </li>
+  {{/each}}
+  </ul>
+  <input type="submit" />
+</form>
