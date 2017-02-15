@@ -1,4 +1,4 @@
-{{outlet}}
+<h1>Device</h1>
 
 <ul>
   <li>{{model.name}}</li>
@@ -12,3 +12,5 @@ Settings:
   <li>{{setting.control.name}} ({{setting.control.type.name}}): {{setting.value}}</li>
 {{/each}}
 </ul>
+
+{{#link-to 'devices.settings.edit' model}}Set device{{/link-to}}
