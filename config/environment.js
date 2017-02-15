@@ -20,6 +20,12 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+    },
+
+    firebase: {
+      apiKey: process.env['FIREBASE_API_KEY'],
+      authDomain: 'infrared-62fe7.firebaseapp.com',
+      databaseURL: 'https://infrared-62fe7.firebaseio.com'
     }
   };
 

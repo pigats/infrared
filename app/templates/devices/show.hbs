@@ -1,0 +1,14 @@
+{{outlet}}
+
+<ul>
+  <li>{{model.name}}</li>
+  <li>{{model.ip}}</li>
+  <li>{{model.type.name}}</li>
+</ul>
+
+Settings:
+<ul>
+{{#each model.settings as |setting|}}
+  <li>{{setting.control.name}} ({{setting.control.type.name}}): {{setting.value}}</li>
+{{/each}}
+</ul>
