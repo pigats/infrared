@@ -9,10 +9,10 @@ const Router = Ember.Router.extend({
 Router.map(function() {
   this.route('devices', function() {
     this.route('new');
-    this.route('show', { path: ':id' });
+    this.route('show', { path: ':device_id' });
 
-    this.route('settings', { path: '' }, function() {
-        this.route('edit', { path: ':id/edit' });
+    this.route('settings', { path: ':device_id/settings' }, function() {
+        this.route('edit');
     });
   });
 });
