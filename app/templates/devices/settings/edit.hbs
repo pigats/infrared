@@ -1,12 +1,5 @@
-{{outlet}}
+<h1>Set {{model.name}}</h1>
 
-<ul>
-  <li>{{model.name}}</li>
-  <li>{{model.ip}}</li>
-  <li>{{model.type.name}}</li>
-</ul>
-
-Settings:
 <form {{action 'update' on='submit'}}>
   <ul>
   {{#each model.settings as |setting|}}
@@ -20,3 +13,5 @@ Settings:
   </ul>
   <input type="submit" />
 </form>
+
+{{#link-to 'devices.show' model}}Back to device{{/link-to}}
