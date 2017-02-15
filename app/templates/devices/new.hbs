@@ -1,0 +1,24 @@
+{{outlet}}
+
+<form {{action 'create' on='submit'}}>
+  <ul>
+    <li>
+      <label for="name">name</label>
+      {{input name='name' value=model.device.name}}
+    </li>
+    <li>
+      <label for="type">type</label>
+      <select onchange={{action (mut typeId) value="target.value"}}>
+        <option value="" selected="selected"></option>
+        {{#each model.types as |type|}}
+          <option value="{{type.id}}"> {{type.name}} </option>
+        {{/each}}
+      </select>
+    </li>
+    <li>
+      <label for="ip">ip</label>
+      {{input name='ip' value=model.device.ip}}
+    </li>
+  </ul>
+  <input type="submit" />
+</form>
