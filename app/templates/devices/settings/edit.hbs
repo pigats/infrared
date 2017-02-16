@@ -1,4 +1,12 @@
-<h1>Set {{model.name}}</h1>
+<h1>
+  {{#link-to 'devices.index' class='device-list-back-link' title='back to devices'}}&mapstoleft;{{/link-to}}
+  {{model.name}}
+</h1>
+
+<ul class="device-details">
+  <li>ip: {{model.ip}}</li>
+  <li>type: {{model.type.name}}</li>
+</ul>
 
 <form {{action 'update' on='change'}}>
   <ul>
@@ -15,5 +23,3 @@
   {{/each}}
   </ul>
 </form>
-
-{{#link-to 'devices.show' model}}Back to device{{/link-to}}
