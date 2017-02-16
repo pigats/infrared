@@ -1,17 +1,25 @@
-<h1>Set {{model.name}}</h1>
+<h1>
+  {{#link-to 'devices.index' class='device-list-back-link' title='back to devices'}}&mapstoleft;{{/link-to}}
+  {{model.name}}
+</h1>
 
-<form {{action 'update' on='submit'}}>
+<ul class="device-details">
+  <li>ip: {{model.ip}}</li>
+  <li>type: {{model.type.name}}</li>
+</ul>
+
+<form {{action 'update' on='change'}}>
   <ul>
   {{#each model.settings as |setting|}}
     <li>
-      <label for="{{setting.control.name}}">
-        {{setting.control.name}}
-      </label>
-      {{input name=setting.control.name value=setting.value}}
+      {{#if (eq setting.control.type.name 'slider')}}
+        {{control-slider setting=setting}}
+      {{else if (eq setting.control.type.name 'switch')}}
+        {{control-switch setting=setting}}
+      {{else if (eq setting.control.type.name 'select')}}
+        {{control-select setting=setting}}
+      {{/if}}
     </li>
   {{/each}}
   </ul>
-  <input type="submit" />
 </form>
-
-{{#link-to 'devices.show' model}}Back to device{{/link-to}}

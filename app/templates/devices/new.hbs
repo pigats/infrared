@@ -4,12 +4,12 @@
   <ul>
     <li>
       <label for="name">name</label>
-      {{input name='name' value=model.device.name}}
+      {{input name='name' value=model.device.name placeholder='livingroom stb'}}
     </li>
     <li>
       <label for="type">type</label>
       <select onchange={{action (mut typeId) value="target.value"}}>
-        <option value="" selected="selected"></option>
+        <option value=""></option>
         {{#each model.types as |type|}}
           <option value="{{type.id}}"> {{type.name}} </option>
         {{/each}}
@@ -17,8 +17,8 @@
     </li>
     <li>
       <label for="ip">ip</label>
-      {{input name='ip' value=model.device.ip}}
+      {{input name='ip' value=model.device.ip placeholder='54.245.240.96'}}
     </li>
   </ul>
-  <input type="submit" />
+  <input type="submit" value="Create" />
 </form>

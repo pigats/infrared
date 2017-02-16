@@ -1,0 +1,12 @@
+<label for="{{setting.control.name}}">{{setting.control.name}}</label>
+<select name="{{setting.control.name}}" onchange={{action (mut setting.value) value='target.value'}}>
+  <option value=""></option>
+  {{#each setting.control.values as |option|}}
+    {{#if (eq option.value setting.value)}}
+      <option value="{{option.value}}" selected>{{option.value}}</option>
+    {{else}}
+      <option value="{{option.value}}">{{option.value}}</option>
+    {{/if}}
+  {{/each}}
+</select>
+
