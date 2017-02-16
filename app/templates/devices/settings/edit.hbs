@@ -1,6 +1,9 @@
 <h1>
   {{#link-to 'devices.index' class='device-list-back-link' title='back to devices'}}&mapstoleft;{{/link-to}}
   {{model.name}}
+  {{#if model.updating }}
+    <i class="spinner"></i>
+  {{/if}}
 </h1>
 
 <ul class="device-details">
